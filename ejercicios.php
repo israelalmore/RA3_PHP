@@ -91,9 +91,38 @@
     }
 
     $media = $media / count($notas);
-$formattedMedia = 
+    $formattedMedia = number_format($media, 2);
 
-    echo $media;
+    echo "Media de las notas: " . $formattedMedia . "<br>";
+    echo "Alumnos con nota por encima de la media: <br>";
+
+    foreach ($notas as $key => $value) {
+        if ($value > 5) {
+            echo $key . "<br>";
+        }
+    }
+
+    /**Fin de ejercicio 7 */
+
+    echo "<h1> EJERCICIO 8 </h1>";
+
+    $notas = array("Miguel" => 5, "Luis" => 7, "Marta" => 10, "Isabel" => 8, "Aitor" => 4, "Pepe" => 1);
+
+    $notaAlta = 0;
+    $persona = "nadie";
+    foreach ($notas as $key => $value) {
+        if ($value > $notaAlta) {
+            $notaAlta = $value;
+            $persona = $key;
+        }
+    }
+
+    echo "La nota más alta es " . $notaAlta . " y el mejor alumno es " . $persona;
+
+    /** Fin de ejercicio 8 */
+
+    echo "<h1> EJERCICIO 9 </h1>";
+
 
     ?>
 
