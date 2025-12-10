@@ -16,6 +16,7 @@
         echo "dato " . $counter . "º: " .  "$value <br>";
         $counter++;
     }
+    /** Fin de ejercicio 1 */
 
     $persona = array("nombre" => "Sara", "apellido" => "Martínez", "edad" => 23, "ciudad" => "Barcelona");
 
@@ -27,6 +28,8 @@
     $persona = array("nombre" => "Sara", "apellido" => "Martínez", "edad" => 23, "ciudad" => "Barcelona");
 
     $persona["edad"] = 24;
+
+    /** Fin de ejercicio 2 */
 
     $counter = 1;
 
@@ -40,12 +43,15 @@
 
     $persona["edad"] = 24;
 
+    /** Fin de ejercicio 3 */
     unset($persona["ciudad"]);
 
     echo "<h1> EJERCICIO 4 </h1>";
 
     var_dump($persona);
 
+
+    /** Fin de ejercicio 5 */
     echo "<h1> EJERCICIO 5 </h1>";
 
     $str = "a,b,c,d,e,f";
@@ -58,6 +64,37 @@
         echo "letter $counter" . "º: $value <br>";
         $counter--;
     }
+
+    /**Fin de ejercicio 5 */
+
+    echo "<h1> EJERCICIO 6 </h1>";
+
+    $notas = array("Miguel" => 5, "Luis" => 7, "Marta" => 10, "Isabel" => 8, "Aitor" => 4, "Pepe" => 1);
+
+    arsort($notas);
+
+    echo "Notas de los estudiantes: ";
+    foreach ($notas as $x => $value) {
+        echo $x . ": " . $value . " ";
+    }
+
+    /** Fin de ejercicio 6 */
+
+    echo "<h1> EJERCICIO 7 </h1>";
+
+    $notas = array("Miguel" => 5, "Luis" => 7, "Marta" => 10, "Isabel" => 8, "Aitor" => 4, "Pepe" => 1);
+
+    $media = 0;
+
+    foreach ($notas as $key => $value) {
+        $media += $value;
+    }
+
+    $media = $media / count($notas);
+$formattedMedia = 
+
+    echo $media;
+
     ?>
 
 </body>
