@@ -121,8 +121,6 @@
 
     /** Fin de ejercicio 8 */
 
-    echo "<h1> EJERCICIO 9 </h1>";
-
 
     ?>
 
