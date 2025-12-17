@@ -28,6 +28,8 @@ function mostrarComicsEnTabla()
     echo '<table border="1">';
     echo '<tr><th>Categoría</th><th>Título</th><th>Editorial</th><th>Autor</th><th>Idioma</th><th>Precio</th><th>Stock</th></tr>';
 
+    $counter = 0;
+
     foreach ($inventario as $categoria => $comics) {
         foreach ($comics as $comic) {
             echo '<tr>';
@@ -41,21 +43,32 @@ function mostrarComicsEnTabla()
             echo '</tr>';
         }
     }
-
     echo '</table>';
 }
 
 function mostrarValorAlmacen()
 {
-    // pending
+    global $inventario;
+    $stockPrice = 0;
+    foreach ($inventario as $categoria => $comics) {
+        foreach ($comics as $comic) {
+            $stockPrice += $comic['stock'] * $comic['precio'];
+        }
+    }
+    echo "Total valor almacen es: " . $stockPrice;
 }
 
 function aplicarDescuentoManga()
 {
     global $inventario;
 
+    foreach ($inventario['suspense_terror'] as &$comic) {
+        if ($comic['idioma'] == 'Japonés') {
+            $comic['precio'] = $comic['precio'] * 0.7; // Aplicar descuento del 30%
+        }
+    }
     foreach ($inventario['accion'] as &$comic) {
-        if ($comic['idioma'] == 'Japonéss') {
+        if ($comic['idioma'] == 'Japonés') {
             $comic['precio'] = $comic['precio'] * 0.7; // Aplicar descuento del 30%
         }
     }
