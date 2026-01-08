@@ -62,14 +62,11 @@ function aplicarDescuentoManga()
 {
     global $inventario;
 
-    foreach ($inventario['suspense_terror'] as &$comic) {
-        if ($comic['idioma'] == 'Japonés') {
-            $comic['precio'] = $comic['precio'] * 0.7; // Aplicar descuento del 30%
-        }
-    }
-    foreach ($inventario['accion'] as &$comic) {
-        if ($comic['idioma'] == 'Japonés') {
-            $comic['precio'] = $comic['precio'] * 0.7; // Aplicar descuento del 30%
+    foreach ($inventario as &$comics) {
+        foreach ($comics as &$comic) {
+            if ($comic['idioma'] == 'Japonés') {
+                $comic['precio'] = $comic['precio'] * 0.7; // Aplicar descuento del 30%
+            }
         }
     }
 }
